@@ -1,0 +1,43 @@
+#first{
+    margin-left:200px;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 600px;
+    width: 500px;
+    height: 100px;
+    color:green;
+    margin-bottom: 30px;
+}
+.idpw{
+    display: inline-block;
+    margin-left: 200px;
+    width:490px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+#second{
+    
+    margin-left:200px;
+    width: 500px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    text-align: center;
+    
+    color: white;
+    background-color: green;
+    
+}
+#asdf{
+    margin-left: 200px;
+    width: 500px;
+}
+#zxcv{
+    display: inline-block;
+    width:200px;
+    text-align: left;
+}
+#qwer{
+    display: inline-block;
+    width:280px;
+    text-align: right;
+}
