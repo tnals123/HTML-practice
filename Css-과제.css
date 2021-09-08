@@ -1,12 +1,70 @@
 .youtube-header{
+    position: fixed;
     display: flex;
     width:100%;
-    height: 40px;
-    position: fixed;
+    height: 50px;
     justify-content: space-between;
     background-color: white;
 }
 
-.topbox{
+#topbox-menubar{
     display: inline-block;
+    width: 30px;
+    height: 100%;
+}
+#topbox-youtubelogo{
+    display: inline-block;
+    width: 150px;
+    height: 100%;
+}
+#topbox-searchbar{
+    
+    width: 300px;
+    height: 100%;
+}
+
+.topbox-profile{
+    width:30px;
+    height:30px;
+    margin-right:20px;
+}
+
+.youtube-manu{
+    margin-top:50px;
+    width:200px;
+    height: 800px;
+    background-color: white;
+    position: fixed;
+}
+.menu-font{
+    font-weight: 450px;
+}
+
+.menu-home{
+    width:30px;
+    height: 18.96px;
+    
+
+}
+.youtube-line{
+    width:190px;
+    display: inline-block;
+}
+.youtube-profile{
+    width:30px;
+    height: 18.96px;
+    border-radius: 15px;;
+}
+
+.videoscreen{
+    position: fixed;
+    left:205px;
+    top:60px;
+    width:100%;
+    height: 800px;
+    background-color:#e5e5e5;
+}
+#videoline{
+    
+    margin-block-start: 0%;
 }
