@@ -9,6 +9,9 @@
     justify-content: space-between;
     background-color: white;
 }
+.youtubemenus{
+    display: inline-block;
+}
 
 #topbox-menubar{
     display: inline-block;
@@ -73,4 +76,70 @@
     
     margin-block-start: 0%;
 }
+.video-box{
+    position: relative;
+    
+    left:15px;
+    display: inline-block;
+    width:300px;
+    height: 290px;
+}
+.video{
+    position: relative;
+    top:25px;
+    left:25px;
+    width:251.71px;
+    height: 141.59px;
+}
+.videoinfo{
+    position: relative;
+    top: 22px;
+    left:25px;
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.videoinfo{
+    width:251.71px;
+    height: 93.2px;
+}
+.videoprofile{
+    position: relative;
+    top:20px;
+    width:36px;
+    height: 36px;
+    border-radius: 15px;
+}
+.videoinfo-sentence{
+    position:relative;
+    left:50px;
+    top: -25px;
+    width:203.71px;
+    height: 78.2px;
+    font-weight: 600px;
+}
+.videoview{
+    position:relative;
+    width:171.92px;
+    height: 35.2px;
+    font-size: 13px;
+    font-weight: 200px;
+}
