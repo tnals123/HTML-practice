@@ -13,6 +13,7 @@
     display: inline-block;
 }
 
+
 #topbox-menubar{
     display: inline-block;
     position: relative;
@@ -37,17 +38,20 @@
 }
 
 .youtube-manu{
+    z-index: 2;
     margin-top:50px;
     width:200px;
-    height: 800px;
+    height: 1000px;
     background-color: white;
     position: fixed;
+    overflow:auto;
+    overflow-x:hidden;
 }
 .menu-font{
-    font-weight: 450px;
+    font-weight: 500;
 }
 
-.menu-home{
+.menu-element{
     width:30px;
     height: 18.96px;
     
@@ -64,11 +68,12 @@
 }
 
 .videoscreen{
+    
     z-index: 1;
-    position: relative;
+    position: absolute;
     left:205px;
     top:60px;
-    width:100%;
+    width:86%;
     height: 1500px;
     background-color:#e5e5e5;
 }
