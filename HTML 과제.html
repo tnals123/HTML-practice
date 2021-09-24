@@ -10,7 +10,7 @@
 <body>
     <header class="youtube-header">
         <div class="youtubemenus" >
-            <img id="topbox-menubar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAADMzMzw8PCwsLBvb28qKiqTk5P4+PisrKydnZ1bW1vFxcXY2NiMjIx7e3u2trY3NzdCQkJNTU2mpqbe3t4iIiLPz89ISEhWVla6uro9PT3y8vLl5eV2dnYSEhKsb8XkAAAA/klEQVR4nO3bW07DMBBAUZMUSB8k5VFKm0D3v0tYQC3xMdIYes4OrjySf2ZKAQAAAAAAAAAAAADg73ka79szreIC93dteo4KXLJLqsagwl12SNVLUGGXHVL1GlRYskOq3qIKD+/ZKddNUYGlDMeuQYe4QAAAAAAAAAAAAAC4Mf36sT2bLi6w1WX9bVTgkF1StQkqbPei5EPhL/3/KW32EU9RgaUs+1WDAn8LAAAAAAAAAAAAALgx59NDe+ZpCQscsxe6a/qgwM/skKqvoMJzdkjVHFR4zA6pCjtHmLNLanZRhf02O+Wqyzoq8MfSN2gIDAQAAAAAAAAAAAAAaMU3FnQd+0IAHb0AAAAASUVORK5CYII=" >
+            <img onmousedown=Appear_Hidden_Menu() id="topbox-menubar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAADMzMzw8PCwsLBvb28qKiqTk5P4+PisrKydnZ1bW1vFxcXY2NiMjIx7e3u2trY3NzdCQkJNTU2mpqbe3t4iIiLPz89ISEhWVla6uro9PT3y8vLl5eV2dnYSEhKsb8XkAAAA/klEQVR4nO3bW07DMBBAUZMUSB8k5VFKm0D3v0tYQC3xMdIYes4OrjySf2ZKAQAAAAAAAAAAAADg73ka79szreIC93dteo4KXLJLqsagwl12SNVLUGGXHVL1GlRYskOq3qIKD+/ZKddNUYGlDMeuQYe4QAAAAAAAAAAAAAC4Mf36sT2bLi6w1WX9bVTgkF1StQkqbPei5EPhL/3/KW32EU9RgaUs+1WDAn8LAAAAAAAAAAAAALgx59NDe+ZpCQscsxe6a/qgwM/skKqvoMJzdkjVHFR4zA6pCjtHmLNLanZRhf02O+Wqyzoq8MfSN2gIDAQAAAAAAAAAAAAAaMU3FnQd+0IAHb0AAAAASUVORK5CYII=" >
             <img id="topbox-youtubelogo" src="data:image/png;base64,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" >
         </div>
         <div class="youtubemenus" >
@@ -23,6 +23,48 @@
             <img id="topbox-profile4" class="topbox-profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0FkvBuASMwyYFQ0PvSeDSlAuo4M1NhUWnMw&usqp=CAU" >
         </div>
     </header>
+    <nav id="asdf" class="hidden_menu">
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+        <br>
+        ㅇ
+        <br>
+
+    </nav>
     <nav  class="youtube-manu">
         <br>
         <div id="section1" onmouseover="ChangeColor('section1')" onmouseup="ChangeColor_AfterClick('section1')" onmousedown="ChangeColor_Click('section1')" onmouseout="ChangeColor_Origin('section1')">
