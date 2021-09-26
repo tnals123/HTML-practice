@@ -1,0 +1,87 @@
+#gametitle{
+    position:relative;
+    left:300px;
+    width: 250px;   
+}
+#titleDOM{
+    position: relative;
+    height: 100px;
+}
+#gamescreen{
+    position:relative;  
+    height: 500px;
+}
+#gamescreen_computernumber{
+    position:relative;
+    left:250px;
+    width:350px;
+    height: 150px;
+}
+#computerinfo{
+    position: relative;
+    top:10px;
+    height: 21px;
+    text-align: center;
+    font-weight: 600;
+    color:black;
+}
+
+#myinfo{
+    position: relative;
+    top:10px;
+    height: 21px;
+    text-align: center;
+    font-weight: 600;
+    color:red;
+}
+#choicescreen{
+    position: relative;
+    top:200px;
+    width: 800px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+#resultscreen{
+    position: relative;
+    top:50px;
+    left:250px;
+    width: 350px;
+    height: 150px;
+}
+#startbutton{
+    display:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.numberDOM{
+    position:relative;
+    display:flex;
+    justify-content: space-between;
+}
+
+.computernumber{
+    width:100px;
+    height: 20px;
+    border:1px solid black;
+    text-align: center;
+}
+.mynumber{
+    width:100px;
+    height: 20px;
+    border:1px solid black;
+    text-align: center;
+}
+.numberbutton{
+    width:60PX;
+    height: 20px;
+}

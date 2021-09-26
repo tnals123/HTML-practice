@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="numberbaseballjs.css">
+</head>
+<body>
+    <header id="titleDOM">
+        <h1 id="gametitle">
+            숫자 야구 게임!
+        </h1>
+    </header>
+    <main id="gamescreen">
+        <section id="gamescreen_computernumber">
+            <p id="computerinfo"> 컴퓨터 숫자</p>
+            <section class="numberDOM"> 
+                <span id="number_1" class="computernumber"></span>   
+                <span id="number_2" class="computernumber"></span>
+                <span id="number_3" class="computernumber"></span>  
+            </section>
+            <p id="myinfo"> 내 숫자</p>
+            <section class="numberDOM"> 
+                <span class="mynumber"></span>   
+                <span class="mynumber"></span>
+                <span class="mynumber"></span>  
+            </section>
+        </section>
+        <section id="resultscreen">
+
+        </section>
+        <section id="choicescreen">
+            <input class="numberbutton" type="button" value="0">
+            <input class="numberbutton" type="button" value="1">
+            <input class="numberbutton" type="button" value="2">
+            <input class="numberbutton" type="button" value="3">
+            <input class="numberbutton" type="button" value="4">
+            <input class="numberbutton" type="button" value="5">
+            <input class="numberbutton" type="button" value="6">
+            <input class="numberbutton" type="button" value="7">
+            <input class="numberbutton" type="button" value="8">
+            <input class="numberbutton" type="button" value="9">
+            <input onclick="Computer_Number()" class="numberbutton" type="button" value="지우기">
+            <input id="startbutton" class="numberbutton" type="button" value="start">
+        </section>
+    </main>
+    <script src="numberbaseballcss.js"></script>
+</body>
+</html>
