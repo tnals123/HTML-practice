@@ -23,27 +23,28 @@
             </section>
             <p id="myinfo"> 내 숫자</p>
             <section class="numberDOM"> 
-                <span class="mynumber"></span>   
-                <span class="mynumber"></span>
-                <span class="mynumber"></span>  
+                <span id="number_4" class="mynumber"></span>   
+                <span id="number_5" class="mynumber"></span>
+                <span id="number_6" class="mynumber"></span>  
+                <input onmousedown="Remove_Record()" id="removebutton" type="button" value="기록 지우기">
             </section>
         </section>
         <section id="resultscreen">
-
+            
         </section>
         <section id="choicescreen">
-            <input class="numberbutton" type="button" value="0">
-            <input class="numberbutton" type="button" value="1">
-            <input class="numberbutton" type="button" value="2">
-            <input class="numberbutton" type="button" value="3">
-            <input class="numberbutton" type="button" value="4">
-            <input class="numberbutton" type="button" value="5">
-            <input class="numberbutton" type="button" value="6">
-            <input class="numberbutton" type="button" value="7">
-            <input class="numberbutton" type="button" value="8">
-            <input class="numberbutton" type="button" value="9">
-            <input onclick="Computer_Number()" class="numberbutton" type="button" value="지우기">
-            <input id="startbutton" class="numberbutton" type="button" value="start">
+            <input onmousedown="My_Number('0')" id="0" class="numberbutton" type="button" value="0">
+            <input onmousedown="My_Number('1')" id="1" class="numberbutton" type="button" value="1">
+            <input onmousedown="My_Number('2')" id="2" class="numberbutton" type="button" value="2">
+            <input onmousedown="My_Number('3')" id="3" class="numberbutton" type="button" value="3">
+            <input onmousedown="My_Number('4')" id="4" class="numberbutton" type="button" value="4">
+            <input onmousedown="My_Number('5')" id="5" class="numberbutton" type="button" value="5">
+            <input onmousedown="My_Number('6')" id="6" class="numberbutton" type="button" value="6">
+            <input onmousedown="My_Number('7')" id="7" class="numberbutton" type="button" value="7">
+            <input onmousedown="My_Number('8')" id="8" class="numberbutton" type="button" value="8">
+            <input onmousedown="My_Number('9')" id="9" class="numberbutton" type="button" value="9">
+            <input onmousedown="Delete_Number()" class="numberbutton" type="button" value="지우기">
+            <input onmousedown="Game_Start()" disabled="disabled" id="startbutton" class="numberbutton" type="button" value="start">
         </section>
     </main>
     <script src="numberbaseballcss.js"></script>
