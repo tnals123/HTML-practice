@@ -25,7 +25,7 @@ function Open_Hidden_Menu(){
     videoscreen.style.display="block";
     videoscreen.style.transition="1s";
     console.log(hidden_menu_clicked);
-    openbutton.style.left=0.1+'px';
+    openbutton.style.left=0+'px';
     openbutton.style.transition= "0.3s";
     hidden_menu_clicked=1;
 }
