@@ -173,6 +173,9 @@ function Game_Start(){
     else if(samenumber.length==3){
         if (numbers[0]==computernumber[0] && numbers[1]==computernumber[1] && numbers[2]==computernumber[2]){
             strike+=3;
+            var input_1=document.getElementById("number_1");
+            var input_2=document.getElementById("number_2");
+            var input_3=document.getElementById("number_3");
             var outmsg=String(out);
             var outcolor=outmsg.fontcolor("red");
             var stmsg=String(strike);
@@ -182,6 +185,10 @@ function Game_Start(){
             create.innerHTML="내 숫자 : "+numbers[0]+" "+numbers[1]+" "+numbers[2]+", 결과 : "+outcolor+"O "+stcolor+"S "+ballcolor+"B";
             strike=0;
             alert("승리했습니다!")
+            input_1.innerText=computernumber[0];
+            input_2.innerText=computernumber[1];
+            input_3.innerText=computernumber[2];
+
         }
         else if (numbers[0]==computernumber[0] || numbers[1]==computernumber[1] || numbers[2]==computernumber[2]){
             strike+=1;
