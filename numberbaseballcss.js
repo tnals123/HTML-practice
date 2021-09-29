@@ -79,21 +79,16 @@ function Game_Start(){
     var ball=0;
     var samenumber;
     var create=document.createElement('div')
-    
-    
-    
-    samenumber=(computernumber.filter(x=>numbers.includes(x)));
-    
-    
     var numberbutton=document.getElementsByClassName("numberbutton");
     var result=document.getElementById("resultscreen");
+
+    samenumber=(computernumber.filter(x=>numbers.includes(x)));
     result.appendChild(create);
-    
+
     for(var i=0;i<=9;i++){
         numberbutton[i].disabled=false;
     }
    
-    
     if (samenumber.length==0){
         out+=1;
         var outmsg=String(out);
