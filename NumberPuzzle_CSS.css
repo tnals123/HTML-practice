@@ -1,0 +1,61 @@
+#gametitle{
+    position: relative;
+    left:300px;
+}
+#gamescreen{
+    position:relative;
+    width:900px;
+    height: 400px;
+}
+#bottomsection{
+    position: relative;
+    top:300px;
+}
+#gamebuttonsection{
+    position:relative;
+    width: 800px;
+    left:50px;
+    height: 50px;
+    top:300px;
+}
+#gamestartbutton{
+    position: relative;
+    left:600px;
+    width: 80px;
+    height: 22px;
+}
+#gameagainbutton{
+    position: relative;
+    left:630px;
+    width: 80px;
+    height: 22px;
+}
+
+.numbersection{
+    display: flex;
+    position:relative;
+    width: 800px;
+    left:50px;
+    height: 50px;
+    justify-content: space-between;
+    
+}
+
+.topnumber{
+    position: relative;
+    top:10px;
+    width:60px;
+    height: 22px;
+    border:2px solid black;
+    background-color:yellow;
+    text-align: center;
+}
+
+.bottomnumber{
+    position: relative;
+    top:10px;
+    width:60px;
+    height: 22px;
+    border:2px solid black;
+    text-align: center;
+}

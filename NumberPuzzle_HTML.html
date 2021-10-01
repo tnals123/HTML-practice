@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' href="NumberPuzzle_CSS.css">
+</head>
+<body>
+    <header id="gametitle">
+        <h1>
+            숫자 퍼즐 게임!
+        </h1>
+    </header>
+    <main id="gamescreen">
+        <section class="numbersection">
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(0)" ondrop="DropEvent_Top_To_Top(0)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(1)" ondrop="DropEvent_Top_To_Top(1)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(2)" ondrop="DropEvent_Top_To_Top(2)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(3)" ondrop="DropEvent_Top_To_Top(3)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(4)" ondrop="DropEvent_Top_To_Top(4)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(5)" ondrop="DropEvent_Top_To_Top(5)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(6)" ondrop="DropEvent_Top_To_Top(6)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(7)" ondrop="DropEvent_Top_To_Top(7)" ondragover="myDragOver(event)">?</span>
+            <span class="topnumber" draggable="true" ondragstart="TopNumber_DragEvent(8)" ondrop="DropEvent_Top_To_Top(8)" ondragover="myDragOver(event)">?</span>
+        </section>
+        <section id="bottomsection" class="numbersection">
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(0)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(0)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(1)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(1)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(2)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(2)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(3)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(3)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(4)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(4)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(5)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(5)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(6)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(6)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(7)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(7)"></span>
+            <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(8)" ondragover="myDragOver(event)" ondrop="DropEvent_Top_To_Bottom(8)"></span>
+        </section>
+        <section id="gamebuttonsection">
+            <input id="gamestartbutton" type="button" value="게임 시작" onclick="GameStart()">
+            <input id="gameagainbutton" type="button" value="다시 하기">
+            <script src="NumberPuzzle_JS.js"></script>
+        </section>
+    </main>
+</body>
+</html>
