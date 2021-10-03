@@ -37,8 +37,9 @@
             <span class="bottomnumber" draggable="true" ondragstart="BottomNumber_DragEvent(8)" ondragover="myDragOver(event)" ondrop="DropEvent_BottomLine(8)"></span>
         </section>
         <section id="gamebuttonsection">
-            <input id="gamestartbutton" type="button" value="게임 시작" onclick="GameStart()">
-            <input id="gameagainbutton" type="button" value="다시 하기">
+            <span id="seconds">00</span><span>:</span><span id="tens">00</span>
+            <input id="gamestartbutton" type="button" value="게임 시작" onclick="GameStart();TimerStart()">
+            <input id="gameagainbutton" type="button" value="다시 하기" onclick="GameAgainStart()">
             <script src="NumberPuzzle_JS.js"></script>
         </section>
     </main>
