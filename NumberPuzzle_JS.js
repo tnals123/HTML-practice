@@ -20,8 +20,14 @@ function BlockZeroArray(){
         if (mynumber[i]==0){
             bottomnumbers[i].draggable=false;
         }
+        if (mynumber[i]!=0){
+            bottomnumbers[i].draggable=true;
+        }
         if (computernumber[i]==0){
             topnumbers[i].draggable=false;
+        }
+        if (computernumber[i]!=0){
+            topnumbers[i].draggable=true;
         }
     }
 }
@@ -29,11 +35,14 @@ function GameStart(){
     mynumber=[0,0,0,0,0,0,0,0,0];
     computernumber=[1,2,3,4,5,6,7,8,9];
     var topnumbers=document.getElementsByClassName("topnumber");
+    var bottomnumbers=document.getElementsByClassName("bottomnumber");
     var gamestartbutton=document.getElementById("gamestartbutton");
     var gameagainbutton=document.getElementById("gameagainbutton");
     computernumber.sort(() => Math.random() - 0.5);
     for(var i=0;i<=8;i++){
         topnumbers[i].innerHTML=computernumber[i];
+        topnumbers[i].draggable=true;
+        bottomnumbers[i].draggable=true;
     }
     gamestartbutton.disabled="disabled";
     gameagainbutton.disabled="disabled";
@@ -68,18 +77,16 @@ function DropEvent_BottomLine(number){
             topnumbers[top_touchedorder].style.backgroundColor="white";
             topnumbers[top_touchedorder].innerHTML="";
             computernumber[top_touchedorder]=0;  
-            console.log(mynumber);
-            GameOver(); 
             BlockZeroArray();
+            GameOver(); 
         }
         else if (mynumber[number]!=0){
             topnumbers[top_touchedorder].innerHTML=mynumber[number];
             bottomnumbers[number].innerHTML=top_touchednumber;
             computernumber[top_touchedorder]=mynumber[number];
             mynumber[number]=top_touchednumber;
-            console.log(mynumber);
-            GameOver(); 
             BlockZeroArray(); 
+            GameOver(); 
         }
     }
     else if (isdragpoint=="bottom"){
@@ -88,9 +95,8 @@ function DropEvent_BottomLine(number){
         bottomnumbers[number].style.backgroundColor="yellow";
         mynumber[bottom_touchedorder]=mynumber[number];
         mynumber[number]=bottom_touchednumber;
-        console.log(mynumber);
-        GameOver();  
         BlockZeroArray();
+        GameOver(); 
         if (mynumber[bottom_touchedorder]==0){
             bottomnumbers[bottom_touchedorder].style.backgroundColor="white";
             bottomnumbers[bottom_touchedorder].innerHTML="";
@@ -107,9 +113,8 @@ function DropEvent_TopLine(number){
         topnumbers[number].style.backgroundColor="yellow";
         computernumber[top_touchedorder]=computernumber[number];
         computernumber[number]=top_touchednumber;
-        console.log(mynumber);
-        GameOver();  
         BlockZeroArray();
+        GameOver(); 
         if (computernumber[top_touchedorder]==0){
             topnumbers[top_touchedorder].style.backgroundColor="white";
             topnumbers[top_touchedorder].innerHTML="";
@@ -124,18 +129,16 @@ function DropEvent_TopLine(number){
             mynumber[bottom_touchedorder]=0;
             bottomnumbers[bottom_touchedorder].style.backgroundColor="white";
             bottomnumbers[bottom_touchedorder].innerHTML=""; 
-            console.log(mynumber);
-            GameOver();  
             BlockZeroArray();
+            GameOver(); 
         }
         else if (computernumber[number]!=0){
             bottomnumbers[bottom_touchedorder].innerHTML=computernumber[number];
             topnumbers[number].innerHTML=bottom_touchednumber;
             computernumber[number]=mynumber[bottom_touchedorder];
             mynumber[bottom_touchedorder]=bottom_touchednumber;
-            console.log(mynumber);
-            GameOver();  
             BlockZeroArray();
+            GameOver(); 
         }
     }
 }
@@ -188,7 +191,6 @@ function startTimer () {
       appendtens.innerHTML = tens;  
     }  
     if (tens > 99) {
-      console.log("seconds");
       seconds++;
       appendseconds.innerHTML = "0" + seconds;
       tens = 0;
