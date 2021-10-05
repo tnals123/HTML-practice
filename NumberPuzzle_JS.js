@@ -150,8 +150,7 @@ function GameAgainStart(){
         topnumbers[i].style.backgroundColor="yellow";
         bottomnumbers[i].innerHTML="";
         bottomnumbers[i].style.backgroundColor="white";
-        topnumbers[i].draggable=true;
-        bottomnumbers[i].draggable=true;
+
     }
         var gamestartbutton=document.getElementById("gamestartbutton");
         gamestartbutton.disabled=false;
@@ -179,7 +178,7 @@ function GameOver(){
 
 function TimerStart() {
     clearInterval(Interval);
-     Interval = setInterval(startTimer, 10);
+    Interval = setInterval(startTimer, 10);
   }
 
 function startTimer () {
