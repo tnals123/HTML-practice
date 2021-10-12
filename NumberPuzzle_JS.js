@@ -1,11 +1,6 @@
-var correctnumber=[1,2,3,4,5,6,7,8,9];
-var mynumber=[0,0,0,0,0,0,0,0,0];
-var computernumber=[1,2,3,4,5,6,7,8,9];
-var isdragpoint="";
-var top_touchedorder;
-var top_touchednumber;
-var bottom_touchedorder;
-var bottom_touchednumber;
+
+var touchednumber;
+var touchedorder;
 var seconds=00;
 var tens=00;
 var appendtens=document.getElementById("tens");
@@ -13,144 +8,47 @@ var appendseconds=document.getElementById("seconds");
 var buttonstart=document.getElementById("start");
 var Interval;
 
-function BlockZeroArray(){
-    var topnumbers=document.getElementsByClassName("topnumber");
-    var bottomnumbers=document.getElementsByClassName("bottomnumber");
-    for (i=0;i<=8;i++){
-        if (mynumber[i]==0){
-            bottomnumbers[i].draggable=false;
-        }
-        if (mynumber[i]!=0){
-            bottomnumbers[i].draggable=true;
-        }
-        if (computernumber[i]==0){
-            topnumbers[i].draggable=false;
-        }
-        if (computernumber[i]!=0){
-            topnumbers[i].draggable=true;
-        }
-    }
-}
 function GameStart(){
-    mynumber=[0,0,0,0,0,0,0,0,0];
     computernumber=[1,2,3,4,5,6,7,8,9];
-    var topnumbers=document.getElementsByClassName("topnumber");
-    var bottomnumbers=document.getElementsByClassName("bottomnumber");
+    var numbers=document.getElementsByClassName("numbers");
     var gamestartbutton=document.getElementById("gamestartbutton");
     var gameagainbutton=document.getElementById("gameagainbutton");
     computernumber.sort(() => Math.random() - 0.5);
     for(var i=0;i<=8;i++){
-        topnumbers[i].innerHTML=computernumber[i];
-        topnumbers[i].draggable=true;
-        bottomnumbers[i].draggable=true;
+        numbers[i].innerHTML=computernumber[i];
+        numbers[i].draggable=true;
+    }
+    for(var i=9;i<=17;i++){
+        numbers[i].draggable=true;
     }
     gamestartbutton.disabled="disabled";
     gameagainbutton.disabled="disabled";
-    isgamestarted=true;
-    BlockZeroArray();
 }
 
-function TopNumber_DragEvent(number){
-    top_touchedorder=number;
-    top_touchednumber=computernumber[number];
-    isdragpoint="top";
- 
+function Number_DragStart(number){
+    var numbers=document.getElementsByClassName("numbers");
+    console.log(numbers);
+    touchednumber=numbers[number].innerHTML;
+    touchedorder=number;
 }
-function BottomNumber_DragEvent(number){
-    bottom_touchedorder=number;
-    bottom_touchednumber=mynumber[number];
-    isdragpoint="bottom";
-}
-
 function myDragOver(event){
     event.preventDefault();
 }
 
-function DropEvent_BottomLine(number){
-    var topnumbers=document.getElementsByClassName("topnumber");
-    var bottomnumbers=document.getElementsByClassName("bottomnumber");
-    if (isdragpoint=="top"){
-        if (mynumber[number]==0){
-            mynumber[number]=top_touchednumber;
-            bottomnumbers[number].innerHTML=top_touchednumber;
-            bottomnumbers[number].style.backgroundColor="yellow";
-            topnumbers[top_touchedorder].style.backgroundColor="white";
-            topnumbers[top_touchedorder].innerHTML="";
-            computernumber[top_touchedorder]=0;  
-            BlockZeroArray();
-            GameOver(); 
-        }
-        else if (mynumber[number]!=0){
-            topnumbers[top_touchedorder].innerHTML=mynumber[number];
-            bottomnumbers[number].innerHTML=top_touchednumber;
-            computernumber[top_touchedorder]=mynumber[number];
-            mynumber[number]=top_touchednumber;
-            BlockZeroArray(); 
-            GameOver(); 
-        }
-    }
-    else if (isdragpoint=="bottom"){
-        bottomnumbers[bottom_touchedorder].innerHTML=mynumber[number];
-        bottomnumbers[number].innerHTML=bottom_touchednumber;
-        bottomnumbers[number].style.backgroundColor="yellow";
-        mynumber[bottom_touchedorder]=mynumber[number];
-        mynumber[number]=bottom_touchednumber;
-        BlockZeroArray();
-        GameOver(); 
-        if (mynumber[bottom_touchedorder]==0){
-            bottomnumbers[bottom_touchedorder].style.backgroundColor="white";
-            bottomnumbers[bottom_touchedorder].innerHTML="";
-            
-        }
-    }
+function Change_Numbers_Drop(number){
+    var numbers=document.getElementsByClassName("numbers");
+    numbers[touchedorder].innerHTML=numbers[number].innerHTML;
+    numbers[number].innerHTML=touchednumber;
+    GameOver();
 }
-function DropEvent_TopLine(number){
-    var topnumbers=document.getElementsByClassName("topnumber");
-    var bottomnumbers=document.getElementsByClassName("bottomnumber");
-    if (isdragpoint=="top"){
-        topnumbers[top_touchedorder].innerHTML=computernumber[number];
-        topnumbers[number].innerHTML=top_touchednumber;
-        topnumbers[number].style.backgroundColor="yellow";
-        computernumber[top_touchedorder]=computernumber[number];
-        computernumber[number]=top_touchednumber;
-        BlockZeroArray();
-        GameOver(); 
-        if (computernumber[top_touchedorder]==0){
-            topnumbers[top_touchedorder].style.backgroundColor="white";
-            topnumbers[top_touchedorder].innerHTML="";
-        }
-    }
-    if (isdragpoint=="bottom"){
-        if (computernumber[number]==0){
-            topnumbers[number].innerHTML=mynumber[bottom_touchedorder];
-            topnumbers[number].innerHTML=bottom_touchednumber;
-            topnumbers[number].style.backgroundColor="yellow";
-            computernumber[number]=bottom_touchednumber;
-            mynumber[bottom_touchedorder]=0;
-            bottomnumbers[bottom_touchedorder].style.backgroundColor="white";
-            bottomnumbers[bottom_touchedorder].innerHTML=""; 
-            BlockZeroArray();
-            GameOver(); 
-        }
-        else if (computernumber[number]!=0){
-            bottomnumbers[bottom_touchedorder].innerHTML=computernumber[number];
-            topnumbers[number].innerHTML=bottom_touchednumber;
-            computernumber[number]=mynumber[bottom_touchedorder];
-            mynumber[bottom_touchedorder]=bottom_touchednumber;
-            BlockZeroArray();
-            GameOver(); 
-        }
-    }
-}
-function GameAgainStart(){
-    var topnumbers=document.getElementsByClassName("topnumber");
-    var bottomnumbers=document.getElementsByClassName("bottomnumber");
-    for (var i=0;i<=8;i++){
-        topnumbers[i].innerHTML="?";
-        topnumbers[i].style.backgroundColor="yellow";
-        bottomnumbers[i].innerHTML="";
-        bottomnumbers[i].style.backgroundColor="white";
 
+function GameAgainStart(){
+    var numbers=document.getElementsByClassName("numbers");
+    for (var i=0;i<=8;i++){
+        numbers[i].innerHTML="?";
+    }
+    for (i=9;i<=17;i++){
+        numbers[i].innerHTML="";
     }
         var gamestartbutton=document.getElementById("gamestartbutton");
         gamestartbutton.disabled=false;
@@ -161,15 +59,19 @@ function GameAgainStart(){
 }
 
 function GameOver(){
-    if ((JSON.stringify(mynumber)===JSON.stringify(correctnumber))){
+    var numbers=document.getElementsByClassName("numbers");
+    var correctnumber=['1','2','3','4','5','6','7','8','9'];
+    var array=[];
+    for(i=9;i<=17;i++){
+        array.push(numbers[i].innerHTML);
+    }
+    console.log(array);
+    if ((JSON.stringify(array)===JSON.stringify(correctnumber))){
         clearInterval(Interval);
         alert("축하드립니다!!" + " 걸린 시간: "+ seconds+"초 "+tens);
         var gameagainbutton=document.getElementById("gameagainbutton");
-        var topnumbers=document.getElementsByClassName("topnumber");
-        var bottomnumbers=document.getElementsByClassName("bottomnumber");
-        for(i=0;i<=8;i++){
-            topnumbers[i].draggable=false;
-            bottomnumbers[i].draggable=false;
+        for(i=0;i<=17;i++){
+            numbers[i].draggable=false;
         }
         gameagainbutton.disabled=false;
         

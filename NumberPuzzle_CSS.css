@@ -42,7 +42,7 @@
     
 }
 
-.topnumber{
+.numbers{
     position: relative;
     top:10px;
     width:60px;
@@ -57,16 +57,3 @@
     user-select: none;
 }
 
-.bottomnumber{
-    position: relative;
-    top:10px;
-    width:60px;
-    height: 22px;
-    border:2px solid black;
-    text-align: center;
-    -ms-user-select: none; 
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
