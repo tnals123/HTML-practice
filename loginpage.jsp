@@ -81,15 +81,21 @@ if (cookies != null){
 
     <main class= "login">
         <section class="loginsection">
-            <h1 class="logintext">로그인</h1>
-            <form action="auth.jsp" method="post" >
-                <span>아이디&nbsp;&nbsp;&nbsp;</span>
-                <input type="text" name="id_value">
-                <br>
-                <span>비밀번호</span>
-                <input type="password" name="pw_value">
-                <br>
-                <input type="submit" value="로그인">
+            <form action="auth.jsp" method="post" class="loginsection_2" >
+                <h1 class="logintext">로그인</h1>
+                <p class="idpw_section">
+                    <input type="text" class="idpw" placeholder="아이디를 입력하세요">
+                </p>
+                <p class="idpw_section">
+                    <input type="password" class="idpw" placeholder="비밀번호를 입력하세요">
+                </p>
+                <p class="checkbox_section">
+                    <label class="checkbox">로그인 유지</label><input type="checkbox" checked>
+                </p>
+                <p class="buttonsection">
+                    <input type="button" class="clickbutton" value="로그인">
+                    <input type="button" class="clickbutton" value="회원가입">
+                </p>
             </form>
         </section>
     </main>
